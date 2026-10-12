@@ -1,0 +1,20 @@
+[
+  {
+    "id": "001",
+    "image": "https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/02.png",
+    "alt": "Photograph 01",
+    "title": "Photograph / 01"
+  },
+  {
+    "id": "002",
+    "image": "https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/03.png",
+    "alt": "Photograph 02",
+    "title": "Photograph / 02"
+  },
+  {
+    "id": "003",
+    "image": "https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/12.png",
+    "alt": "Photograph 03",
+    "title": "Photograph / 03"
+  }
+]
