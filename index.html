@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture Photo Archive</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f6f2;
+      color: #242420;
+      font-family: Arial, "Noto Sans JP", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 28px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d9d8d1;
+    }
+
+    .logo {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    main {
+      max-width: 1440px;
+      margin: auto;
+      padding: 90px 5% 110px;
+    }
+
+    .intro {
+      margin-bottom: 90px;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #77766e;
+    }
+
+    h1 {
+      margin: 28px 0;
+      font-size: clamp(30px, 5vw, 62px);
+      line-height: 1.55;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .description {
+      max-width: 470px;
+      font-size: 13px;
+      line-height: 2.2;
+      color: #696860;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #bdbcb4;
+      padding-bottom: 14px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+    }
+
+    .count {
+      color: #77766e;
+      font-size: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px 18px;
+    }
+
+    .photo-placeholder {
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e7e5df;
+      color: #89877f;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+    }
+
+    .photo-info {
+      padding-top: 12px;
+    }
+
+    .photo-id {
+      font-size: 10px;
+      color: #77766e;
+    }
+
+    .photo-title {
+      margin-top: 7px;
+      font-size: 12px;
+    }
+
+    .editions {
+      margin-top: 110px;
+    }
+
+    .edition-item {
+      padding: 26px 0;
+      border-bottom: 1px solid #d9d8d1;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .edition-item h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .edition-item p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.8;
+      color: #77766e;
+    }
+
+    .edition-number {
+      font-size: 11px;
+      color: #77766e;
+    }
+
+    footer {
+      padding: 28px 5%;
+      border-top: 1px solid #d9d8d1;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #77766e;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      main {
+        padding-top: 60px;
+      }
+
+      .intro {
+        margin-bottom: 60px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 12px;
+      }
+
+      .editions {
+        margin-top: 75px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="#">ARCHITECTURE / PHOTO</a>
+    <nav>
+      <a href="#archive">ARCHIVE</a>
+      <a href="#editions">EDITIONS</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro" id="about">
+      <div class="eyebrow">PHOTOGRAPHIC ARCHIVE</div>
+      <h1>建築によって生まれる、<br>見る位置を記録する。</h1>
+      <p class="description">
+        建築そのものを正面から記録するのではなく、<br>
+        建築によって組織された「見る位置」や「視点場」を撮影する。<br>
+        写真を蓄積し、編集し、異なる関係から読み直すためのアーカイブ。
+      </p>
+    </section>
+
+    <section id="archive">
+      <div class="section-heading">
+        <h2>PHOTO ARCHIVE</h2>
+        <span class="count">SELECTED PHOTOGRAPHS</span>
+      </div>
+
+      <div class="gallery">
+        <article>
+          <div class="photo-placeholder">PHOTO 001</div>
+          <div class="photo-info">
+            <div class="photo-id">001</div>
+            <div class="photo-title">Photograph / 01</div>
+          </div>
+        </article>
+
+        <article>
+          <div class="photo-placeholder">PHOTO 002</div>
+          <div class="photo-info">
+            <div class="photo-id">002</div>
+            <div class="photo-title">Photograph / 02</div>
+          </div>
+        </article>
+
+        <article>
+          <div class="photo-placeholder">PHOTO 003</div>
+          <div class="photo-info">
+            <div class="photo-id">003</div>
+            <div class="photo-title">Photograph / 03</div>
+          </div>
+        </article>
+
+        <article>
+          <div class="photo-placeholder">PHOTO 004</div>
+          <div class="photo-info">
+            <div class="photo-id">004</div>
+            <div class="photo-title">Photograph / 04</div>
+          </div>
+        </article>
+
+        <article>
+          <div class="photo-placeholder">PHOTO 005</div>
+          <div class="photo-info">
+            <div class="photo-id">005</div>
+            <div class="photo-title">Photograph / 05</div>
+          </div>
+        </article>
+
+        <article>
+          <div class="photo-placeholder">PHOTO 006</div>
+          <div class="photo-info">
+            <div class="photo-id">006</div>
+            <div class="photo-title">Photograph / 06</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="editions" id="editions">
+      <div class="section-heading">
+        <h2>EDITIONS</h2>
+        <span class="count">PHOTOGRAPHIC PROJECTS</span>
+      </div>
+
+      <div class="edition-item">
+        <div>
+          <h3>Edition 01 — Untitled</h3>
+          <p>写真を選び、順序を与え、ひとつの編集として提示する。</p>
+        </div>
+        <div class="edition-number">01</div>
+      </div>
+
+      <div class="edition-item">
+        <div>
+          <h3>Edition 02 — Untitled</h3>
+          <p>場所や視点の関係から、写真のまとまりを再構成する。</p>
+        </div>
+        <div class="edition-number">02</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    ARCHITECTURE / PHOTO ARCHIVE
+  </footer>
+</body>
+</html>
