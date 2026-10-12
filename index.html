@@ -358,42 +358,36 @@ fetch('./photos.json')
       info.append(id, title);
       article.append(imageBox, info);
       gallery.appendChild(article);
+            img.style.cursor = 'zoom-in';
+
+      img.addEventListener('click', () => {
+        const overlay = document.createElement('div');
+        overlay.style.cssText =
+          'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;';
+
+        const enlarged = document.createElement('img');
+        enlarged.src = img.src;
+        enlarged.alt = img.alt;
+        enlarged.style.cssText =
+          'max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;';
+
+        overlay.appendChild(enlarged);
+        overlay.addEventListener('click', () => overlay.remove());
+
+        const closeOnEscape = (event) => {
+          if (event.key === 'Escape') {
+            overlay.remove();
+            document.removeEventListener('keydown', closeOnEscape);
+          }
+        };
+
+        document.addEventListener('keydown', closeOnEscape);
+        document.body.appendChild(overlay);
+      });
     });
   })
   .catch(error => console.error(error));
-document.querySelector('.gallery').addEventListener('click', event => {
-  const img = event.target.closest('img');
-  if (!img) return;
 
-  const overlay = document.createElement('div');
-  overlay.style.cssText = `
-    position:fixed; inset:0; z-index:9999;
-    background:rgba(0,0,0,0.9);
-    display:flex; align-items:center; justify-content:center;
-    padding:40px; cursor:zoom-out;
-  `;
-
-  const largeImg = document.createElement('img');
-  largeImg.src = img.src;
-  largeImg.alt = img.alt;
-  largeImg.style.cssText = `
-    max-width:100%; max-height:100%;
-    width:auto; height:auto; object-fit:contain;
-  `;
-
-  const close = () => overlay.remove();
-
-  overlay.appendChild(largeImg);
-  overlay.addEventListener('click', close);
-  document.addEventListener('keydown', function esc(e) {
-    if (e.key === 'Escape') {
-      close();
-      document.removeEventListener('keydown', esc);
-    }
-  });
-
-  document.body.appendChild(overlay);
-});
 </script>
 
 </body>
