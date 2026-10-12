@@ -362,9 +362,7 @@ fetch('./photos.json')
 
       img.addEventListener('click', () => {
         const overlay = document.createElement('div');
-       opacity:0; transition:opacity 0.4s ease; overlay.style.cssText =
-          'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;';
-
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;opacity:0;transition:opacity 0.4s ease;';
         const enlarged = document.createElement('img');
         enlarged.src = img.src;
         enlarged.alt = img.alt;
