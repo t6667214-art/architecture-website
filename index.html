@@ -316,5 +316,52 @@
   <footer>
     ARCHITECTURE / PHOTO ARCHIVE
   </footer>
+  
+<script>
+fetch('./photos.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('photos.json を読み込めませんでした');
+    }
+    return response.json();
+  })
+  .then(photos => {
+    const gallery = document.querySelector('.gallery');
+    if (!gallery) return;
+
+    gallery.innerHTML = '';
+
+    photos.forEach(photo => {
+      const article = document.createElement('article');
+
+      const imageBox = document.createElement('div');
+      imageBox.className = 'photo-placeholder';
+
+      const img = document.createElement('img');
+      img.src = photo.image;
+      img.alt = photo.alt || photo.title || '';
+      img.style.cssText = 'display:block;width:100%;height:100%;object-fit:cover;';
+
+      imageBox.appendChild(img);
+
+      const info = document.createElement('div');
+      info.className = 'photo-info';
+
+      const id = document.createElement('div');
+      id.className = 'photo-id';
+      id.textContent = photo.id;
+
+      const title = document.createElement('div');
+      title.className = 'photo-title';
+      title.textContent = photo.title;
+
+      info.append(id, title);
+      article.append(imageBox, info);
+      gallery.appendChild(article);
+    });
+  })
+  .catch(error => console.error(error));
+</script>
+
 </body>
 </html>
