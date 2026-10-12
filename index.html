@@ -362,7 +362,7 @@ fetch('./photos.json')
 
       img.addEventListener('click', () => {
         const overlay = document.createElement('div');
-        overlay.style.cssText =
+       opacity:0; transition:opacity 0.4s ease; overlay.style.cssText =
           'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;';
 
         const enlarged = document.createElement('img');
@@ -382,7 +382,9 @@ fetch('./photos.json')
         };
 
         document.addEventListener('keydown', closeOnEscape);
-        document.body.appendChild(overlay);
+        document.body.appendChild(overlay);requestAnimationFrame(() => {
+  overlay.style.opacity = '1';
+});
       });
     });
   })
