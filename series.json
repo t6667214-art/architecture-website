@@ -1,0 +1,30 @@
+
+{
+  "series": [
+    {
+      "id": "01",
+      "title": "建築のまわりの写真",
+      "description": "建築によって生まれる、見る位置や視点場を記録する。\nひとつの主題を、複数の写真から読み直すためのシリーズ。",
+      "photos": [
+        {
+          "number": "01",
+          "image": "https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/02.png",
+          "title": "見る位置 01",
+          "note": "建築と街のあいだ"
+        },
+        {
+          "number": "02",
+          "image": "https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/03.png",
+          "title": "見る位置 02",
+          "note": "内外の境界"
+        },
+        {
+          "number": "03",
+          "image": "https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/12.png",
+          "title": "見る位置 03",
+          "note": "光と構造"
+        }
+      ]
+    }
+  ]
+}
