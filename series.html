@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series / Photo Archive</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f7f6f2;
+      color: #242420;
+      font-family: Arial, "Noto Sans JP", sans-serif;
+    }
+    header {
+      margin: 0 5%;
+      padding: 28px 0;
+      border-bottom: 1px solid #d9d8d1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    a { color: inherit; text-decoration: none; }
+    .logo { font-size: 13px; letter-spacing: .12em; }
+    .back { font-size: 12px; color: #777; }
+    main { margin: 54px 5%; }
+    .eyebrow {
+      font-size: 11px;
+      color: #777;
+      letter-spacing: .12em;
+    }
+    h1 { font-size: 30px; font-weight: 400; margin: 14px 0; }
+    .description {
+      font-size: 13px;
+      line-height: 2;
+      color: #666;
+      margin-bottom: 42px;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px 18px;
+    }
+    .series-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+    .series-number {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #777;
+    }
+    .series-title { margin-top: 5px; font-size: 15px; }
+    .series-note {
+      margin-top: 7px;
+      font-size: 12px;
+      color: #777;
+      line-height: 1.8;
+    }
+    footer {
+      margin: 70px 5% 0;
+      padding: 24px 0;
+      border-top: 1px solid #d9d8d1;
+      font-size: 11px;
+      letter-spacing: .08em;
+    }
+    @media (max-width: 650px) {
+      .series-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="./index.html">PHOTO ARCHIVE</a>
+    <a class="back" href="./index.html">BACK TO ARCHIVE ↗</a>
+  </header>
+
+  <main>
+    <div class="eyebrow">SELECTED SERIES / 01</div>
+    <h1>建築のまわりの写真</h1>
+    <p class="description">
+      建築によって生まれる、見る位置や視点場を記録する。<br>
+      ひとつの主題を、複数の写真から読み直すためのシリーズ。
+    </p>
+
+    <div class="series-grid">
+      <article class="series-card">
+        <img src="https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/02.png" alt="シリーズ写真 01">
+        <div class="series-number">01</div>
+        <div class="series-title">見る位置 01</div>
+        <div class="series-note">建築と街のあいだ</div>
+      </article>
+      <article class="series-card">
+        <img src="https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/03.png" alt="シリーズ写真 02">
+        <div class="series-number">02</div>
+        <div class="series-title">見る位置 02</div>
+        <div class="series-note">内外の境界</div>
+      </article>
+      <article class="series-card">
+        <img src="https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/12.png" alt="シリーズ写真 03">
+        <div class="series-number">03</div>
+        <div class="series-title">見る位置 03</div>
+        <div class="series-note">光と構造</div>
+      </article>
+    </div>
+  </main>
+
+  <footer>ARCHITECTURE / PHOTO ARCHIVE</footer>
+</body>
+</html>
