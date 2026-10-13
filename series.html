@@ -87,28 +87,53 @@
       ひとつの主題を、複数の写真から読み直すためのシリーズ。
     </p>
 
-    <div class="series-grid">
-      <article class="series-card">
-        <img src="https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/02.png" alt="シリーズ写真 01">
-        <div class="series-number">01</div>
-        <div class="series-title">見る位置 01</div>
-        <div class="series-note">建築と街のあいだ</div>
-      </article>
-      <article class="series-card">
-        <img src="https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/03.png" alt="シリーズ写真 02">
-        <div class="series-number">02</div>
-        <div class="series-title">見る位置 02</div>
-        <div class="series-note">内外の境界</div>
-      </article>
-      <article class="series-card">
-        <img src="https://pub-5da450a00cd04a1d809b1b4a4c2e564a.r2.dev/photos/12.png" alt="シリーズ写真 03">
-        <div class="series-number">03</div>
-        <div class="series-title">見る位置 03</div>
-        <div class="series-note">光と構造</div>
-      </article>
-    </div>
+    <div class="series-grid" id="series-grid"></div>
   </main>
 
   <footer>ARCHITECTURE / PHOTO ARCHIVE</footer>
 </body>
+  <script>
+fetch('./series.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('series.json を読み込めませんでした');
+    }
+    return response.json();
+  })
+  .then(data => {
+    const series = data.series[0];
+    const grid = document.getElementById('series-grid');
+
+    document.querySelector('main .eyebrow').textContent =
+      'SELECTED SERIES / ' + series.id;
+    document.querySelector('main h1').textContent = series.title;
+    document.querySelector('main .description').innerHTML =
+      series.description.replace(/\n/g, '<br>');
+
+    series.photos.forEach(photo => {
+      const card = document.createElement('article');
+      card.className = 'series-card';
+
+      const img = document.createElement('img');
+      img.src = photo.image;
+      img.alt = photo.title;
+
+      const number = document.createElement('div');
+      number.className = 'series-number';
+      number.textContent = photo.number;
+
+      const title = document.createElement('div');
+      title.className = 'series-title';
+      title.textContent = photo.title;
+
+      const note = document.createElement('div');
+      note.className = 'series-note';
+      note.textContent = photo.note;
+
+      card.append(img, number, title, note);
+      grid.appendChild(card);
+    });
+  })
+  .catch(error => console.error(error));
+</script>
 </html>
